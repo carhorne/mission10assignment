@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Header from './components/Header';
 import BowlerTable from './components/BowlerTable';
 import { Bowler } from './types/Bowler';
@@ -14,8 +13,15 @@ const App: React.FC = () => {
     const fetchBowlers = async () => {
       try {
         setLoading(true);
-        const response = await axios.get<Bowler[]>('/api/Bowlers');
-        setBowlers(response.data);
+        // Replace with your actual API URL
+        const response = await fetch('https://localhost:7247/api/Bowlers');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setBowlers(data);
         setError(null);
       } catch (err) {
         setError('Error fetching bowler data. Please try again later.');
