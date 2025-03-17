@@ -1,0 +1,47 @@
+.table-container {
+    overflow-x: auto;
+    margin: 0 20px;
+}
+
+.bowler-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.bowler-table th,
+.bowler-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.bowler-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.bowler-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.bowler-table tr:hover {
+    background-color: #e6f7ff;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
